@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills & Payments | FitGymSoftware</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .status-badge.paid { background: #e8f5e9; color: #2e7d32; }
+        .status-badge.pending { background: #fff3e0; color: #ef6c00; }
+        .status-badge.overdue { background: #ffebee; color: #c62828; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>FitGym</h2>
+        <ul>
+            <li><a href="admin.html">Overview</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="bills.html" class="active">Bills & Payments</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="diet.html">Diet Plans</a></li>
+            <li><a href="store.html">Supplement Store</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <h1>Bills & Payments</h1>
+            <div class="user-profile">
+                <span>Finance Admin</span>
+                <img src="./image/checked-icon-black.webp" alt="Avatar">
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Collections</h3>
+                <span class="value">$42,850</span>
+            </div>
+            <div class="stat-card">
+                <h3>Outstanding Amount</h3>
+                <span class="value" style="color: #e74c3c;">$3,420</span>
+            </div>
+            <div class="stat-card">
+                <h3>Paid Today</h3>
+                <span class="value" style="color: #2ecc71;">$1,200</span>
+            </div>
+            <div class="stat-card">
+                <h3>Overdue Bills</h3>
+                <span class="value">12</span>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Recent Transactions</h2>
+                <button id="createBillBtn" class="action-btn">Generate New Bill</button>
+            </div>
+            <div class="table-container">
+                <table class="member-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Member Name</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billsTableBody">
+                        <tr>
+                            <td>#INV-1001</td>
+                            <td>Harvey Specter</td>
+                            <td>$250.00</td>
+                            <td>May 25, 2024</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px;">Mark Paid</button></td>
+                        </tr>
+                        <tr>
+                            <td>#INV-1002</td>
+                            <td>Rachel Zane</td>
+                            <td>$150.00</td>
+                            <td>May 10, 2024</td>
+                            <td><span class="status-badge paid">Paid</span></td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px; background: #6c757d;">Receipt</button></td>
+                        </tr>
+                        <tr>
+                            <td>#INV-1003</td>
+                            <td>Mike Ross</td>
+                            <td>$120.00</td>
+                            <td>May 01, 2024</td>
+                            <td><span class="status-badge overdue">Overdue</span></td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px;">Send Reminder</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <div class="pagination-info">Showing 1 to 3 of 120 transactions</div>
+                <div class="pagination-btns">
+                    <button class="page-btn disabled">&laquo; Prev</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">Next &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

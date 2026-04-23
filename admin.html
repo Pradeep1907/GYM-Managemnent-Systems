@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | FitGymSoftware</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>FitGym</h2>
+        <ul>
+            <li><a href="admin.html" class="active">Overview</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="bills.html">Bills & Payments</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="diet.html">Diet Plans</a></li>
+            <li><a href="store.html">Supplement Store</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <h1>Admin Dashboard</h1>
+            <div class="user-profile">
+                <span>Admin User</span>
+                <img src="./image/checked-icon-black.webp" alt="Avatar">
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card" data-filter="all">
+                <h3>Total Members</h3>
+                <span class="value">1,254</span>
+            </div>
+            <div class="stat-card" data-filter="active">
+                <h3>Active Subscriptions</h3>
+                <span class="value">982</span>
+            </div>
+            <div class="stat-card" data-filter="revenue">
+                <h3>Monthly Revenue</h3>
+                <span class="value">$12,450</span>
+            </div>
+            <div class="stat-card" data-filter="pending">
+                <h3>Pending Bills</h3>
+                <span class="value">45</span>
+            </div>
+        </div>
+
+        <div class="actions-section" style="margin-top: 30px;">
+            <h2 id="tableTitle">All Members</h2>
+            <div class="table-container">
+                <table class="member-table">
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Email Address</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Amount Pending</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="memberTableBody">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <div class="pagination-info">Showing 1 to 5 of 50 entries</div>
+                <div class="pagination-btns">
+                    <button class="page-btn disabled">&laquo; Prev</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Next &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

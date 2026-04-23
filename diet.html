@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plans | FitGymSoftware</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .goal-badge { padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+        .goal-badge.weight-loss { background: #e3f2fd; color: #1565c0; }
+        .goal-badge.muscle-gain { background: #fce4ec; color: #c2185b; }
+        .goal-badge.maintenance { background: #f1f8e9; color: #33691e; }
+        .goal-badge.keto { background: #fffde7; color: #fbc02d; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>FitGym</h2>
+        <ul>
+            <li><a href="admin.html">Overview</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="bills.html">Bills & Payments</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="diet.html" class="active">Diet Plans</a></li>
+            <li><a href="store.html">Supplement Store</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <h1>Diet Plan Management</h1>
+            <div class="user-profile">
+                <span>Nutrition Admin</span>
+                <img src="./image/checked-icon-black.webp" alt="Avatar">
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Active Plans</h3>
+                <span class="value">24</span>
+            </div>
+            <div class="stat-card">
+                <h3>Members Enrolled</h3>
+                <span class="value" style="color: #007bff;">412</span>
+            </div>
+            <div class="stat-card">
+                <h3>Completion Rate</h3>
+                <span class="value" style="color: #2ecc71;">85%</span>
+            </div>
+            <div class="stat-card">
+                <h3>New Plans (Month)</h3>
+                <span class="value">6</span>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Plan Library</h2>
+                <button id="createPlanBtn" class="action-btn">Create New Plan</button>
+            </div>
+            <div class="table-container">
+                <table class="member-table">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Target Goal</th>
+                            <th>Duration</th>
+                            <th>Calories/Day</th>
+                            <th>Assigned</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Advanced Keto Shred</td>
+                            <td><span class="goal-badge keto">Keto / Fat Loss</span></td>
+                            <td>8 Weeks</td>
+                            <td>1,800 kcal</td>
+                            <td>124 members</td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px; background: #6c757d;">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Massive Bulking Protocol</td>
+                            <td><span class="goal-badge muscle-gain">Muscle Gain</span></td>
+                            <td>12 Weeks</td>
+                            <td>3,200 kcal</td>
+                            <td>85 members</td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px; background: #6c757d;">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Lean Tone Female</td>
+                            <td><span class="goal-badge weight-loss">Weight Loss</span></td>
+                            <td>6 Weeks</td>
+                            <td>1,500 kcal</td>
+                            <td>156 members</td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px; background: #6c757d;">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Balanced Lifestyle</td>
+                            <td><span class="goal-badge maintenance">Maintenance</span></td>
+                            <td>Ongoing</td>
+                            <td>2,200 kcal</td>
+                            <td>47 members</td>
+                            <td><button class="action-btn" style="padding: 5px 10px; font-size: 12px; background: #6c757d;">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <div class="pagination-info">Showing 1 to 4 of 24 plans</div>
+                <div class="pagination-btns">
+                    <button class="page-btn disabled">&laquo; Prev</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">Next &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

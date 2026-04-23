@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics | FitGymSoftware</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .report-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .chart-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+            color: #777;
+            margin-top: 20px;
+        }
+        .export-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>FitGym</h2>
+        <ul>
+            <li><a href="admin.html">Overview</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="bills.html">Bills & Payments</a></li>
+            <li><a href="reports.html" class="active">Reports</a></li>
+            <li><a href="diet.html">Diet Plans</a></li>
+            <li><a href="store.html">Supplement Store</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="top-header">
+            <h1>Reports & Analytics</h1>
+            <div class="user-profile">
+                <span>Admin User</span>
+                <img src="./image/checked-icon-black.webp" alt="Avatar">
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Conversion Rate</h3>
+                <span class="value">68%</span>
+            </div>
+            <div class="stat-card">
+                <h3>Avg. Revenue/Member</h3>
+                <span class="value">$142</span>
+            </div>
+            <div class="stat-card">
+                <h3>Total Inventory Value</h3>
+                <span class="value">$8,240</span>
+            </div>
+            <div class="stat-card">
+                <h3>Member Growth</h3>
+                <span class="value" style="color: #2ecc71;">+12%</span>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Generate Custom Report</h2>
+                <div style="display: flex; gap: 10px;">
+                    <input type="date" class="page-btn">
+                    <input type="date" class="page-btn">
+                    <button class="action-btn">Generate</button>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Revenue Trend (Last 6 Months)</h3>
+                    <button class="export-btn">Export PDF</button>
+                </div>
+                <div class="chart-placeholder">
+                    [ Interactive Revenue Chart Visualization ]
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Membership Distribution</h3>
+                    <button class="export-btn">Export CSV</button>
+                </div>
+                <div class="chart-placeholder">
+                    [ Membership Plan Distribution Pie Chart ]
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
